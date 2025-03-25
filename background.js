@@ -1,10 +1,10 @@
 chrome.commands.onCommand.addListener((command) => {
     if (command === "open_meet") {
         chrome.tabs.create({ url: "https://meet.google.com/new" }, (tab) => {
-            // Wait for the tab to update to the final meeting URL
+
             chrome.tabs.onUpdated.addListener(function listener(tabId, changeInfo, updatedTab) {
                 if (tabId === tab.id && changeInfo.status === "complete") {
-                    chrome.tabs.onUpdated.removeListener(listener); // Stop listening after copying
+                    chrome.tabs.onUpdated.removeListener(listener);
 
                     chrome.scripting.executeScript({
                         target: { tabId: tab.id },
