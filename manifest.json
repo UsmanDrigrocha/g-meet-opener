@@ -1,0 +1,28 @@
+{
+    "name": "Google Meet Shortcut",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Press Ctrl+Shift+1 to open a new Google Meet and copy the link.",
+    "permissions": ["tabs", "scripting", "clipboardWrite"],
+    "host_permissions": ["https://meet.google.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "open_meet": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+1"
+            },
+            "description": "Open Google Meet and copy link"
+        }
+    },
+    "icons": {
+        "16": "g-meet-icon.png",
+        "48": "g-meet-icon.png",
+        "128": "g-meet-icon.png"
+    },
+    "action": {
+        "default_icon": "g-meet-icon.png",
+        "default_title": "Google Meet Shortcut"
+    }
+}
